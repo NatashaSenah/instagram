@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME':'instagram',
-        'USER': 'Natasha',
-    'PASSWORD':'',
+        'USER': 'student',
+    'PASSWORD':'Fabian1234',
     }
 }
 
