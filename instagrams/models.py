@@ -37,6 +37,14 @@ class Image(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey(Profile)
     # comment = models.TextField()
+    @classmethod
+    def home(cls,date):
+        instagrams = cls.objects.all()
+        return instagrams
+    @classmethod
+    def search_by_image_name(cls,search_term):
+        album = cls.objects.filter(image_name__icontains=search_term)
+        return album
     def __str__(self):
         return self.image_image
 
