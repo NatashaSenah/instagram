@@ -1,20 +1,17 @@
 {%extends 'all-instagram/base.html'%}
-{% block content %} 
 {{ block.super}}
+{% block content %} 
 
 <div class="container">
 
   <div class="row">
-  {% for instagrams_item in instagrams %}
- 
-    <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h2 class="text-center"> {{ instagrams_item.image }} </h2>
-    </div> -->
+  {% for item in images %}
+  {{item.image_caption}}
+
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{instagrams_item.image_image.url}}"  alt="{{instagrams_item.image_image.url}}">
+      <img src="{{item.image_image.url}}"  alt="{{item.image_image.url}}">
     </div>
   </div>
-
   {% empty %}
   <div class="row">
     <h2 class="text-center">There No  Items</h2>
@@ -24,14 +21,13 @@
 </div>
 <div class="container-fluid">
 
-  <form  action="{%url 'instagrams'%}" method="post">
-    {%csrf_token%}
 
-    {% bootstrap_form letterForm layout='inline' %}
-    <input type="submit" value="Subscribe">
-  </form>
 
 </div>
 
 
 {% endblock %}
+
+
+
+
