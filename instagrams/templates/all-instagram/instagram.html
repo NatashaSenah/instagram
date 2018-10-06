@@ -4,15 +4,15 @@
 
 <div class="container">
 
-
-  {% for instagrams_item in instagramss %}
-
   <div class="row">
-  
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+  {% for instagrams_item in instagrams %}
+ 
+    <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <h2 class="text-center"> {{ instagrams_item.image }} </h2>
+    </div> -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <img src="{{instagrams_item.image_image.url}}"  alt="{{instagrams_item.image_image.url}}">
     </div>
-
   </div>
 
   {% empty %}
@@ -22,5 +22,16 @@
   {% endfor %}
 
 </div>
+<div class="container-fluid">
+
+  <form  action="{%url 'instagrams'%}" method="post">
+    {%csrf_token%}
+
+    {% bootstrap_form letterForm layout='inline' %}
+    <input type="submit" value="Subscribe">
+  </form>
+
+</div>
+
 
 {% endblock %}

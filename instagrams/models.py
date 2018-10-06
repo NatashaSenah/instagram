@@ -7,6 +7,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, default=1)
 
     def __str__(self):
+    
         return self.bio
 
     def save_profile(self):
@@ -46,7 +47,7 @@ class Image(models.Model):
         album = cls.objects.filter(image_name__icontains=search_term)
         return album
     def __str__(self):
-        return self.image_image
+        return self.image_name
 
     def save_image(self):
         self.save()
@@ -66,3 +67,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment by {} on {}'.format(self.name, self.post)
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
