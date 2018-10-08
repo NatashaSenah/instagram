@@ -3,10 +3,9 @@
 ## Description
 This is a where people will be able to view my various pictures and also comment..
 ## Setup/Installation Requirements
-* One needs to create a new project by using the "mkdir (project name).
+* You need to have the python version3.
 * You then activate the virtual environment.
-* You then install django.
-* Afterwards you will start both app and project since they will come with some packages that wil help in making the project.
+* You then run the heroku app deployed and you will gain access to my app.
 ## Known Bugs
 Slight problem when making the profile,likes and comments.
 ## Technologies Used
