@@ -1,9 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
-class User(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    post = HTMLField()
+
+
 
 
 
@@ -50,6 +49,12 @@ class Image(models.Model):
     def home(cls,date):
         instagrams = cls.objects.all()
         return instagrams
+
+    @classmethod
+    def get_profile_images(cls, profile):
+        images = Image.objects.filter(profile=profile)
+        return images
+
     @classmethod
     def search_by_image_name(cls,search_term):
         album = cls.objects.filter(image_name__icontains=search_term)
