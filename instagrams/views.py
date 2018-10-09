@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
 from .models import Image,Profile
 from django.contrib.auth.models import User
-from .forms import ProfileForm,ImageForm
+from .forms import ProfileForm,ImageForm, SignupForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
@@ -63,3 +63,23 @@ def upload_image(request):
         form = ImageForm()
     
     return render(request, 'profile/upload_image.html', {'form':form})
+
+
+def signup(request):
+    if request.user.is_authenticated():
+        return redirect('instagram')
+    else:
+        if request.method == 'POST':
+            form = SignupForm(request.POST)
+            if form.is_valid():
+                user = form.save(commit=False)
+                user.is_active = False
+                user.save()
+                # current_site = get_current_site(request)
+                # to_email = form.cleaned_data.get('email')
+                # activation_email(user, current_site, to_email)
+                # return HttpResponse('Please confirm your email')
+                return redirect('instagram')
+        else:
+            form = SignupForm()
+        return render(request, 'registration/registration_form.html',{'form':form})
