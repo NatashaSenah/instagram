@@ -14,7 +14,7 @@ def welcome(request):
 # @login_required
 def search_results(request):
 
-    if 'image' in request.GET and request.GET["image"]:
+    if 'ima ge' in request.GET and request.GET["image"]:
         search_term = request.GET.get("image")
         searched_image = Image.search_by_image_name(search_term)
         message = f"{search_term}"

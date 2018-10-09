@@ -6,11 +6,10 @@
 
   <div class="row">
   {% for item in images %}
-  {{item.image_caption}}
+  <!-- {{item.image_caption}} -->
 
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{item.image_image.url}}"  alt="{{item.image_image.url}}">
-    </div>
+    <div class="col-md-4" >
+      <img src="{{item.image_image.url}}"  alt="{{item.image_image.url}}" width="300px">
   </div>
   {% empty %}
   <div class="row">
@@ -25,7 +24,7 @@
 
 </div>
 
-
+</div>
 {% endblock %}
 
 

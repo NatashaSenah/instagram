@@ -6,8 +6,8 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-5 profile-image">
-                    {% if profile_details.prof_pic %}
-                    <img src="{{profile_details.prof_pic.cdn_url}}" alt="profile-photo">
+                    {% if profile_details.profile_photo %}
+                    <img src="{{profile_details.profile_photo.url}}" alt="profile-photo">
                     {% else %}
                     <img src="/static/img/Smiling.jpg" alt="Smiling">
                     {% endif %}
@@ -51,7 +51,7 @@
     <div class="row">
         {% for img in images %}
         <div class="col-md-7 images">
-            <img src="{{img.image.url}}" alt="Image" class="jumbotron">
+            <img src="{{img.image.url}}" alt="Image" >
         </div>
         {% empty %}
         <div class="col-md-7">
