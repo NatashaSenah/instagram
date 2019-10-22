@@ -12,7 +12,7 @@ Slight problem when making the profile,likes and comments.
 Bootstrap
 Python version 3
 ## Support and contact details
-Call:0766889933/E-mail:tashsenah@gmail.com
+Call:0766889933
 ### License
 Copyright 2018 Natasha Senah
 
